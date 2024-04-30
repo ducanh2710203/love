@@ -4,149 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Baby Love You So</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        background-color: palevioletred;
-      }
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center; /* Canh giữa nội dung */
-      }
-      h1 {
-        text-align: center;
-      }
-      .lyrics {
-        margin-top: 20px;
-        font-size: 30px;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        color: white;
-        line-height: 1;
-        white-space: pre-line;
-        overflow: hidden; /* Ngăn chặn văn bản vượt quá khu vực hiển thị */
-      }
-      .heart {
-        width: 100px;
-        height: 90px;
-        position: relative;
-        animation: heartbeat 1s infinite;
-      }
-
-      .heart:before,
-      .heart:after {
-        content: "Thủy";
-        width: 50px;
-        height: 90px;
-        background: #fc2e5a;
-        position: absolute;
-        top: 0;
-      }
-      .heart:before {
-        top: 35px;
-        left: 83px;
-        border-radius: 50px 50px 0 0;
-        transform: rotate(-45deg);
-        transform-origin: 0 100%;
-      }
-
-      .heart:after {
-        left: 50px;
-        border-radius: 50px 50px 0 0;
-        transform: rotate(45deg);
-        transform-origin: 0 100%;
-      }
-
-      .text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-        z-index: 1;
-      }
-
-      @keyframes heartbeat {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="love.css" />
   </head>
   <body>
     <div class="container">
       <div class="heart">
-        <div class="text"></div>
+        <div class="text-container">
+          <p class="text"></p>
+        </div>
       </div>
       <h1>My Baby Love You So</h1>
       <div class="lyrics" id="lyrics"></div>
+      <audio
+        class="audio"
+        src="y2mate.com - BÀI HÁT HUYỀN THOẠI  Please Tell Me Why  Bảo Thy X Vương Khang  LYRIC VIDEO_720pFH.mp4"
+        autoplay
+      ></audio>
     </div>
 
-    <script>
-      // Lời bài hát
-      var lyricsText = `My baby love you so
-Can't you see it in my eyes
-My heart beats just for you
-It's no surprise
-Every time you come around
-I feel alive
-My baby love you so
-Until the end of time
-
-Repeat chorus
-
-You're the one that I adore
-Forever and ever more
-My baby love you so
-Until the stars no longer glow
-
-Repeat chorus
-
-My baby love you so
-Can't you see it in my eyes
-My heart beats just for you
-It's no surprise
-Every time you come around
-I feel alive
-My baby love you so
-Until the end of time
-
-Repeat chorus
-
-My baby love you so
-Can't you see it in my eyes
-My heart beats just for you
-It's no surprise
-Every time you come around
-I feel alive
-My baby love you so
-Until the end of time`;
-
-      // Phần hiển thị lời bài hát
-      var lyricsElement = document.getElementById("lyrics");
-      var lyricsArray = lyricsText.split(" ");
-      var index = 0;
-
-      // Hiển thị từng chữ một sau mỗi 100ms
-      function showLyrics() {
-        if (index < lyricsArray.length) {
-          lyricsElement.textContent += lyricsArray[index++];
-          lyricsElement.textContent += " ";
-          setTimeout(showLyrics, 200);
-        }
-      }
-
-      showLyrics();
-    </script>
+    <script src="love.js"></script>
   </body>
 </html>
